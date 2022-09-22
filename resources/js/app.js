@@ -14,7 +14,11 @@ function init() {
     }
     if (document.querySelector('#blog') != undefined) {
         addHtmlFromMarkdown();
-        animateTyping();
+        animateBlogTyping();
+    }
+
+    if (document.querySelector('#thankYou') != undefined) {
+        animateContactTyping();
     }
 }
 
@@ -39,17 +43,31 @@ function showNav() {
     }
 }
 
-function animateTyping() {
+function animateBlogTyping() {
     title = document.querySelector('h1 span#blogTitle').innerText;
     document.querySelector('h1 span#blogTitle').innerHTML = "";
-    showTypingAnimation();
+    showBlogTypingAnimation();
 }
 
-function showTypingAnimation() {
+function showBlogTypingAnimation() {
     if (i < title.length) {
         document.querySelector('h1 span#blogTitle').innerHTML += title.charAt(i);
         i++;
-        setTimeout(showTypingAnimation, 60);
+        setTimeout(showBlogTypingAnimation, 60);
+    }
+}
+
+function animateContactTyping() {
+    title = document.querySelector('h1 span#thanks').innerText;
+    document.querySelector('h1 span#thanks').innerHTML = "";
+    showContactTypingAnimation();
+}
+
+function showContactTypingAnimation() {
+    if (i < title.length) {
+        document.querySelector('h1 span#thanks').innerHTML += title.charAt(i);
+        i++;
+        setTimeout(showContactTypingAnimation, 60);
     }
 }
 

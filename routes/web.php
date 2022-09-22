@@ -4,11 +4,15 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::post('/contact', [ContactController::class, 'mail'])->name('contact.mail');
 
 Auth::routes([
     'register' => false,

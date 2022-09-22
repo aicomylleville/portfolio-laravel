@@ -14,7 +14,7 @@ header {
         span {
             color: $colorTheme;
 
-            &#blogTitle {
+            &#blogTitle, &#thanks {
                 color: $colorLink;
             }
         }
@@ -233,6 +233,12 @@ main {
                     margin-bottom: 1rem;
                     padding: 0.5rem;
                 }
+            }
+        }
+
+        &#contact, &#thankYou {
+            h2 {
+                margin-bottom: 2rem;
             }
         }
     }
