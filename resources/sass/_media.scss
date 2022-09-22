@@ -1,0 +1,73 @@
+@media (max-width: 60rem) {
+    header {
+        padding: 1rem !important;
+
+        img#menu {
+            @include flex(center);
+        }
+
+        nav {
+            ul {
+                position: fixed;
+                inset: 0 0 0 0;
+                background: hsl(0 0% 0% / 0.5);
+                backdrop-filter: blur(0.3rem);
+                flex-direction: column;
+                align-items: flex-end !important;
+                padding: min(30vh, 5rem);
+
+                transform: translate(100%);
+
+                a {
+                    font-size: 1.2rem;
+                }
+            }
+
+            ul[data-visable="true"] {
+                transform: translate(0%);
+            }
+
+            button {
+                background: none;
+                border: none;
+                color: inherit;
+                padding: 0;
+                cursor: pointer;
+                outline: inherit;
+                font: inherit;
+                position: relative;
+                z-index: 9999;
+
+                &#menu {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    main {
+        section {
+            padding: 1rem !important;
+
+            &#blogs {
+                article {
+                    height: min(7.2rem, 10rem) !important;
+
+                    h3 {
+                        display: none;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &#blog {
+                img {
+                    max-height: 15rem !important;
+                }
+            }
+        }
+    }
+}
