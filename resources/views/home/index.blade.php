@@ -5,5 +5,7 @@
 @endsection
 
 @section('content')
-    <h1>Random</h1>
+    <section id="home">
+        <h2>This website is a work in progress.</h2>
+    </section>
 @endsection

@@ -27,7 +27,7 @@ class ContactController extends Controller
         $message = $request->input('message');
 
 
-        Mail::to('aico.mylleville1998@gmail.com')->send(new ContactMail($name, $email, $subject, $message));
+        Mail::to('hello@aicomylleville.be')->send(new ContactMail($name, $email, $subject, $message));
 
         return view('contact.thanks', ['name' => $name]);
     }
