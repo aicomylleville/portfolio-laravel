@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1 data-page="contact"><a href="/">aicoMylleville</a><span><a href="{{ route('contact') }}" class="theme">.contact</a>(</span><span id="thanks">'Thank you!'</span><span>)</span></h1>
+    <h1 data-page="contact"><span><a href="{{ route('contact') }}" class="theme">.contact</a>(</span><span id="thanks">'Thank you!'</span><span>)</span></h1>
 @endsection
 
 @section('content')
