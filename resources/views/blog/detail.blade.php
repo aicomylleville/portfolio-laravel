@@ -6,6 +6,7 @@
 
 @section('content')
 
+<main data-page="blog">
     <section id="blog">
         <h2 class="title">{{ $blog -> description }}</h2>
         <img src="{{ asset($blog -> image) }}" alt="{{ $blog -> title }}" title="{{ $blog -> title }}">
@@ -26,5 +27,7 @@
             @endisset
         @endauth
     </section>
+</main>
+
 
 @endsection

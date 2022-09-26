@@ -6,6 +6,7 @@
 
 @section('content')
 
+<main data-page="blogs">
     <section id="filter">
         <ul>
             <li><a href="{{ route('blog.index', ['filter' => 'all']) }}" class="selected" data-id="all">All</a></li>
@@ -32,6 +33,6 @@
             </a>
         @endforeach
     </section>
-
+</main>
 
 @endsection

@@ -1,21 +1,30 @@
 "use strict";
+
 window.addEventListener('DOMContentLoaded', init);
 
 const menu = document.querySelector('#menu');
-const nav = document.querySelector('header nav ul');
-let title;
+const page = document.querySelector('main').dataset.page;
+
+
+let animatedPlace;
+let animatedText;
 let i = 0;
 
 function init() {
-    menu.addEventListener('click', toggleMenu);
-    showNav();
-    if (document.querySelector('#filter') != undefined) {
-        showFilter();
+
+    toggleSelectedNav();
+    menu.addEventListener('click', toggleMobileMenu);
+
+    switch(page) {
+        case "blogs":
+            toggleSelectedFilter();
+            break;
+        case "blog":
+            addHtmlFromMarkdown();
+            animateBlogTyping();
+            break;
     }
-    if (document.querySelector('#blog') != undefined) {
-        addHtmlFromMarkdown();
-        animateBlogTyping();
-    }
+
 
     if (document.querySelector('#thankYou') != undefined) {
         animateContactTyping();
@@ -23,72 +32,78 @@ function init() {
 }
 
 // General
+function toggleSelectedNav() {
+    const page = document.querySelector('h1').dataset.page;
 
-function toggleMenu() {
+    if (page) {
+        showSelectedNav(page);
+    }
+}
+
+function showSelectedNav(page) {
+    document.querySelectorAll('nav a').forEach((a) => a.classList.remove('selected'));
+    document.querySelector('nav a[data-nav="' + page + '"').classList.add('selected');
+}
+
+
+function toggleMobileMenu() {
     const visable = nav.getAttribute('data-visable');
 
     if (visable === "false") {
-        nav.setAttribute('data-visable', true);
+        showMobileMenu(true);
     } else {
-        nav.setAttribute('data-visable', false);
+        showMobileMenu(false);
     }
 }
 
-function showNav() {
-    const page = document.querySelector('h1').dataset.page;
-
-    if (page != undefined) {
-        document.querySelectorAll('nav a').forEach((a) => a.classList.remove('selected'));
-        document.querySelector('nav a[data-nav="' + page + '"').classList.add('selected');
-    }
-}
-
-function animateBlogTyping() {
-    title = document.querySelector('h1 span#blogTitle').innerText;
-    document.querySelector('h1 span#blogTitle').innerHTML = "";
-    showBlogTypingAnimation();
-}
-
-function showBlogTypingAnimation() {
-    if (i < title.length) {
-        document.querySelector('h1 span#blogTitle').innerHTML += title.charAt(i);
-        i++;
-        setTimeout(showBlogTypingAnimation, 60);
-    }
-}
-
-function animateContactTyping() {
-    title = document.querySelector('h1 span#thanks').innerText;
-    document.querySelector('h1 span#thanks').innerHTML = "";
-    showContactTypingAnimation();
-}
-
-function showContactTypingAnimation() {
-    if (i < title.length) {
-        document.querySelector('h1 span#thanks').innerHTML += title.charAt(i);
-        i++;
-        setTimeout(showContactTypingAnimation, 60);
-    }
+function showMobileMenu(visable) {
+    nav.setAttribute('data-visable', visable);
 }
 
 
-// Blog
-
-function showFilter() {
+// Pages
+function toggleSelectedFilter() {
     let filter = getFilter();
     if (filter != null) {
-        document.querySelectorAll('#filter a').forEach((f) => f.classList.remove('selected'))
-        document.querySelector("#filter a[data-id='" + filter + "'").classList.add('selected');
+        showSelectedFilter(filter);
     }
 }
 
 function getFilter() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('filter');
- };
+}
+
+function showSelectedFilter(filter) {
+    document.querySelectorAll('#filter a').forEach((f) => f.classList.remove('selected'))
+    document.querySelector("#filter a[data-id='" + filter + "'").classList.add('selected');
+}
+
+
+function animateBlogTyping() {
+    animatedPlace = document.querySelector('h1 span#blogTitle');
+    animatedText = animatedPlace.innerText;
+    animatedPlace.innerHTML = "";
+    showTypingAnimation();
+}
+
+function animateContactTyping() {
+    animatedPlace = document.querySelector('h1 span#thanks');
+    animatedText = animatedPlace.innerText;
+    animatedPlace.innerHTML = "";
+    showTypingAnimation();
+}
+
+function showTypingAnimation() {
+    if (i < animatedText.length) {
+        animatedPlace.innerHTML += animatedText.charAt(i);
+        i++;
+        setTimeout(showTypingAnimation, 60);
+    }
+}
+
 
 function addHtmlFromMarkdown() {
     const article = document.querySelector('#blog article');
-    const content = article.textContent;
-    article.innerHTML = `${content}`;
+    article.innerHTML = `${article.textContent}`;
 }

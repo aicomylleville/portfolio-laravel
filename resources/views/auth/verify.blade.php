@@ -5,10 +5,14 @@
 @endsection
 
 @section('content')
-<section id="verify">
-    <form method="POST" action="{{ route('verification.resend') }}">
-        @csrf
-        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">Click here to request another</button>.
-    </form>
-</section>
+
+<main>
+    <section id="verify">
+        <form method="POST" action="{{ route('verification.resend') }}">
+            @csrf
+            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">Click here to request another</button>.
+        </form>
+    </section>
+</main>
+
 @endsection

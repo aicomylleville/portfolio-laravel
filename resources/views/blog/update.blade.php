@@ -6,6 +6,7 @@
 
 @section('content')
 
+<main>
     <section id="updateBlog">
         @if($errors->any())
             <div class="errors">
@@ -42,5 +43,7 @@
             <input type="submit" value="Update">
         </form>
     </section>
+</main>
+
 
 @endsection

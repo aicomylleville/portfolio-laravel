@@ -5,9 +5,12 @@
 @endsection
 
 @section('content')
-<section id="thankYou">
-    <h2>Thank you {{ $name }}</h2>
-    <p>I will get back to you as soon as possible!</p>
-</section>
+
+<main>
+    <section id="thankYou">
+        <h2>Thank you {{ $name }}</h2>
+        <p>I will get back to you as soon as possible!</p>
+    </section>
+</main>
 
 @endsection

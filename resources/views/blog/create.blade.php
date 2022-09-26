@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+<main data-page="blog">
     <section id="createBlog">
         @if($errors->any())
             <div class="errors">
@@ -40,4 +42,6 @@
             <input type="submit" value="Post">
         </form>
     </section>
+</main>
+
 @endsection
