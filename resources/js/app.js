@@ -47,7 +47,7 @@ function showSelectedNav(page) {
 
 
 function toggleMobileMenu() {
-    const visable = nav.getAttribute('data-visable');
+    const visable = menu.getAttribute('data-visable');
 
     if (visable === "false") {
         showMobileMenu(true);
@@ -57,7 +57,7 @@ function toggleMobileMenu() {
 }
 
 function showMobileMenu(visable) {
-    nav.setAttribute('data-visable', visable);
+    menu.setAttribute('data-visable', visable);
 }
 
 

@@ -3,69 +3,107 @@
 @import './variables';
 @import './mixins';
 
-body {
+html {
+    font-size: 100%;
     background-color: $colorBackground;
-    font-family: $font;
     color: $colorText;
+    font-family: $font;
 
-    a {
-        color: $colorText;
-        &:hover {
-            color: $colorLink;
-        }
-    }
-
-    h2 {
-        font-size: 1.2rem;
-        line-height: 130%;
-        font-weight: bold;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .theme {
-        color: $colorTheme;
-    }
-
-    .button, input[type="submit"] {
-        background-color: $colorTheme;
-        font-family: $font;
-        border: none;
-        padding: 0.7rem 1rem;
-        border-radius: 10px;
-        color: $colorBackground;
-    }
-
-    form {
-        width: 100%;
-        @include flex(flex-start);
+    body {
+        min-height: 100vh;
+        padding: 2rem;
+        @include flex(space-between);
         flex-direction: column;
-        align-items: flex-start;
 
-        input, textarea, select {
-            margin-top: 0.7rem;
-            width: 100%;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 150%;
-            border-radius: 6px;
-            border: none;
+        * {
+            line-height: 175%;
+        }
 
-            &:focus {
-                outline: none !important;
-                border: 2px solid $colorTheme;
+        .h1 {
+            font-size: 3.81rem;
+        }
+        .h2 {
+            font-size: 3.05rem;
+        }
+        .h3 {
+            font-size: 2.44rem;
+        }
+        .h4 {
+            font-size: 1.96rem;
+        }
+        .h5 {
+            font-size: 1.56rem;
+        }
+        .h6 {
+            font-size: 1.25rem;
+        }
+        .s {
+            font-size: 0.8rem;
+        }
+        .button {
+            padding: 0.8rem 2rem;
+            min-width: 10rem;
+
+            &.primary {
+                background-color: $colorTheme;
+                color: $colorBackground;
+                border: none;
+
+            }
+            &.secondary {
+                border: 1px solid $colorText;
+                color: $colorText;
+            }
+        }
+        a {
+            color: $colorLink;
+
+            &:hover {
+                color: $colorTheme;
             }
         }
 
-        input[type="checkbox"] {
-            width: 1rem;
+        form {
+            input, textarea, select {
+                background-color: $colorBackground;
+                border: 1px solid $colorTheme;
+            }
         }
 
-        input[type="submit"] {
-            max-width: 10rem;
-            cursor: pointer;
+        header {
+            width: 100%;
+            @include flex(space-between);
+            h1 {
+                span {
+                    color: $colorTheme;
+                }
+            }
+            img, button {
+                // todo: DELETE THIS
+                display: none;
+            }
+            a {
+                color: $colorText;
+            }
+            ul {
+                @include flex(center);
+                gap: 1rem;
+                .selected {
+                    color: $colorTheme;
+                }
+            }
+        }
+
+        footer {
+            @include flex(space-between);
+            width: 100%;
+            a {
+                color: $colorText;
+            }
+            ul {
+                @include flex(center);
+                gap: 1rem;
+            }
         }
     }
 }

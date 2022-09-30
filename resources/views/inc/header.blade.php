@@ -3,8 +3,8 @@
     <nav>
         <button id="menu" class="hidden"><img src="{{ asset('assets/icons/menu.svg') }}" alt="menu" title="menu"></button>
         <ul data-visable="false">
-            <li><a href="/" data-nav="home">.home()</a></li>
-            <li><a href="#" data-nav="about">.about()</a></li>
+            <li><a href="{{ route('home') }}" data-nav="home">.home()</a></li>
+            <li><a href="{{ route('about') }}" data-nav="about">.about()</a></li>
             <li><a href="{{ route('blog.index') }}" data-nav="blog">.blog()</a></li>
             <li><a href="{{ route('contact') }}" data-nav="contact">.contact()</a></li>
             @auth
