@@ -8,34 +8,39 @@ html {
     background-color: $colorBackground;
     color: $colorText;
     font-family: $font;
+    height: 100%;
+    width: 100%;
 
     body {
-        min-height: 100vh;
+        min-height: 100%;
         padding: 2rem;
         @include flex(space-between);
         flex-direction: column;
 
         * {
-            line-height: 175%;
+            line-height: 150%;
         }
 
         .h1 {
-            font-size: 3.81rem;
+            font-size: 3rem;
         }
         .h2 {
-            font-size: 3.05rem;
+            font-size: 2.49rem;
         }
         .h3 {
-            font-size: 2.44rem;
+            font-size: 2.07rem;
         }
         .h4 {
-            font-size: 1.96rem;
+            font-size: 1.73rem;
         }
         .h5 {
-            font-size: 1.56rem;
+            font-size: 1.44rem;
         }
         .h6 {
-            font-size: 1.25rem;
+            font-size: 1.19rem;
+        }
+        .b {
+            font-size: 1rem;
         }
         .s {
             font-size: 0.8rem;
@@ -64,18 +69,40 @@ html {
         }
 
         form {
+            max-width: 30rem;
             input, textarea, select {
                 background-color: $colorBackground;
                 border: 1px solid $colorTheme;
+                color: $colorText;
+                width: 100%;
+                margin-bottom: 1.2rem;
+            }
+
+            input[type="submit"] {
+                padding: 0.8rem 2rem;
+                min-width: 10rem;
+                background-color: $colorTheme;
+                color: $colorBackground;
+                border: none;
+                font-size: 1rem;
+                font-family: $font;
             }
         }
 
         header {
             width: 100%;
             @include flex(space-between);
+            margin-bottom: 2rem;
             h1 {
                 span {
                     color: $colorTheme;
+                }
+
+                a.theme {
+                    color: $colorTheme;
+                }
+                span.string {
+                    color: $colorExtra;
                 }
             }
             img, button {
@@ -97,6 +124,8 @@ html {
         footer {
             @include flex(space-between);
             width: 100%;
+            margin-top: 2rem;
+
             a {
                 color: $colorText;
             }
