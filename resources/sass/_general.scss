@@ -1,138 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import './reset';
 @import './variables';
 @import './mixins';
 
-html {
-    font-size: 100%;
-    background-color: $colorBackground;
-    color: $colorText;
+body {
     font-family: $font;
-    height: 100%;
-    width: 100%;
+    background-color: $color-background;
+    color: $color-font;
+    margin: 1.5rem;
 
-    body {
-        min-height: 100%;
-        padding: 2rem;
-        @include flex(space-between);
-        flex-direction: column;
+    line-height: 130%;
+}
 
-        * {
-            line-height: 150%;
-        }
+.h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
 
-        .h1 {
-            font-size: 3rem;
-        }
-        .h2 {
-            font-size: 2.49rem;
-        }
-        .h3 {
-            font-size: 2.07rem;
-        }
-        .h4 {
-            font-size: 1.73rem;
-        }
-        .h5 {
-            font-size: 1.44rem;
-        }
-        .h6 {
-            font-size: 1.19rem;
-        }
-        .b {
-            font-size: 1rem;
-        }
-        .s {
-            font-size: 0.8rem;
-        }
-        .button {
-            padding: 0.8rem 2rem;
-            min-width: 10rem;
-
-            &.primary {
-                background-color: $colorTheme;
-                color: $colorBackground;
-                border: none;
-
-            }
-            &.secondary {
-                border: 1px solid $colorText;
-                color: $colorText;
-            }
-        }
-        a {
-            color: $colorLink;
-
-            &:hover {
-                color: $colorTheme;
-            }
-        }
-
-        form {
-            max-width: 30rem;
-            input, textarea, select {
-                background-color: $colorBackground;
-                border: 1px solid $colorTheme;
-                color: $colorText;
-                width: 100%;
-                margin-bottom: 1.2rem;
-            }
-
-            input[type="submit"] {
-                padding: 0.8rem 2rem;
-                min-width: 10rem;
-                background-color: $colorTheme;
-                color: $colorBackground;
-                border: none;
-                font-size: 1rem;
-                font-family: $font;
-            }
-        }
-
-        header {
-            width: 100%;
-            @include flex(space-between);
-            margin-bottom: 2rem;
-            h1 {
-                span {
-                    color: $colorTheme;
-                }
-
-                a.theme {
-                    color: $colorTheme;
-                }
-                span.string {
-                    color: $colorExtra;
-                }
-            }
-            img, button {
-                // todo: DELETE THIS
-                display: none;
-            }
-            a {
-                color: $colorText;
-            }
-            ul {
-                @include flex(center);
-                gap: 1rem;
-                .selected {
-                    color: $colorTheme;
-                }
-            }
-        }
-
-        footer {
-            @include flex(space-between);
-            width: 100%;
-            margin-top: 2rem;
-
-            a {
-                color: $colorText;
-            }
-            ul {
-                @include flex(center);
-                gap: 1rem;
-            }
-        }
+    span {
+        text-transform: capitalize;
     }
+}
+
+.h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.h3 {
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.small {
+    font-size: 0.81rem;
+    font-weight: 400;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: #ffffff;
+    background-color: $color-font;
+}
+
+a {
+    color: $color-font;
 }

@@ -19,7 +19,7 @@ Auth::routes([
     'register' => false,
     'reset' => false,
     'verify' => false,
-  ]);
+]);
 
 
 Route::controller(BlogController::class)->group(function () {
