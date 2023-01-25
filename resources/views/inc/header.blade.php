@@ -1,5 +1,5 @@
 <header>
-    <h1><a href="{{ route('home') }}">aico <span>&copy;2022</span></a></h1>
+    <h1><a href="{{ route('home') }}">aico <span>&copy;2023</span></a></h1>
 
     <nav>
         <div>
