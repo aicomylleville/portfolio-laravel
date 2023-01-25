@@ -2,14 +2,18 @@
 
 @section('content')
 
-    <h2 class="h1">aico mylleville <span>portfolio site.</span></h2>
-    <p>Software engineer based in Belgium - Ghent</p>
+    <section class="title">
+        <h2 class="h1">aico mylleville <span>portfolio site.</span></h2>
+        <p>Software engineer based in Belgium - Ghent</p>
+    </section>
 
     <section id="projects">
-        <div>
-            <img src="{{ asset('images/frile.png') }}" alt="">
-            <h5 class="h4">Frile</h5>
-            <p>E-commerce site</p>
+        <div class="project">
+            <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
+            <div class="text">
+                <h5 class="h4">Frile</h5>
+                <p>E-commerce site</p>
+            </div>
         </div>
     </section>
 
@@ -20,8 +24,10 @@
     </div>
 
     <div class="contact">
-        <img src="" alt="">
-        <p>Please feel free to contact me by e-mail or form.</p>
+        <div>
+            <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
+            <p>Please feel free to contact me by e-mail or <a href="{{ route('contact') }}">form</a>.</p>
+        </div>
         <a href="mailto:hello@aicomylleville.be">hello@aicomylleville.be <img src="{{ asset('assets/icons/arrow-up.png') }}" alt=""></a>
     </div>
 
