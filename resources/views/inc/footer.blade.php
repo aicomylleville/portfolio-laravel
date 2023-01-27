@@ -11,7 +11,7 @@
 
         <div>
             <ul class="nav">
-                <li><a href="{{ route('home') }}">home</a></li>
+                <li><a href="{{ route('home.index') }}">home</a></li>
                 <li><a href="{{ route('about') }}">about me</a></li>
                 <li><a href="{{ route('blog.index') }}">blog</a></li>
                 <li><a href="{{ route('contact') }}">contact</a></li>

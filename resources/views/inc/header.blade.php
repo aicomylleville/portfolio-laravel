@@ -1,10 +1,10 @@
 <header>
-    <h1><a href="{{ route('home') }}">aico <span>&copy;2023</span></a></h1>
+    <h1><a href="{{ route('home.index') }}">aico <span>&copy;2023</span></a></h1>
 
     <nav>
         <div>
             <ul>
-                <li><a href="{{ route('home') }}">home</a></li>
+                <li><a href="{{ route('home.index') }}">home</a></li>
                 <li><a href="{{ route('about') }}">about me</a></li>
                 <li><a href="{{ route('blog.index') }}">blog</a></li>
                 <li><a href="{{ route('contact') }}">contact</a></li>

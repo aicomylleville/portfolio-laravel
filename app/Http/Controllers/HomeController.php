@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home() {
+    public function index(Request $request) {
         return view('home.index');
+    }
+
+    public function show($id) {
+        return view('home.detail');
     }
 }

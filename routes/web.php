@@ -7,13 +7,17 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home.index');
+    Route::get('/{id}', 'show')->name('home.show');
+});
 
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-
-Route::post('/contact', [ContactController::class, 'mail'])->name('contact.mail');
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'index')->name('contact');
+    Route::post('/contact', 'mail')->name('contact.mail');
+});
 
 Auth::routes([
     'register' => false,
@@ -21,13 +25,19 @@ Auth::routes([
     'verify' => false,
 ]);
 
-
 Route::controller(BlogController::class)->group(function () {
     Route::get('/blog', 'index')->name('blog.index');
     Route::get('/blog/{id}', 'show')->name('blog.show');
 });
 
 Route::middleware(['auth', 'user.access:admin'])->group(function () {
+    // Home
+    Route::get('/new/create', [AdminController::class, 'portfolioCreate'])->name('home.create');
+    Route::post('/', [AdminController::class, 'portfolioStore'])->name('home.store');
+    Route::put('/{id}', [AdminController::class, 'portfolioUpdate'])->name('home.update');
+    Route::get('/{id}/edit', [AdminController::class, 'portfolioEdit'])->name('home.edit');
+    Route::delete('/{id}', [AdminController::class, 'portfolioDestroy'])->name('home.destroy');
+
     // Blog
     Route::get('/blog/new/create', [AdminController::class, "blogCreate"])->name('blog.create');
     Route::post('/blog', [AdminController::class, "blogStore"])->name('blog.store');
