@@ -56,14 +56,19 @@ p {
     font-weight: 400;
 }
 
-.button {
+.button, input[type="submit"] {
     display: inline-block;
     padding: 1rem 2rem;
     color: #ffffff;
     background-color: $color-font;
     margin: 2rem 0;
+    border: none;
 }
 
 a {
     color: $color-font;
+}
+
+.bold {
+    font-weight: 600;
 }

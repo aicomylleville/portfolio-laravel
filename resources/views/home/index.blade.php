@@ -19,7 +19,9 @@
 
     <section class="about">
         <h3 class="h2">Aico Mylleville</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis error amet quisquam officiis aliquid atque debitis consequatur temporibus similique.</p>
+        <p>
+            I'm a Software Engineer student with a passion for full-stack development. Always enthousiastic to learn more.
+        </p>
         <a href="{{ route('about') }}" class="button">About me</a>
     </section>
 

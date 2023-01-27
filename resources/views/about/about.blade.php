@@ -13,7 +13,9 @@
         <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
 
         <h5 class="h4">Aico Mylleville</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dignissimos ullam a in, molestias ducimus quam eveniet maiores eaque ratione ipsum eos est modi exercitationem vero nostrum? Ducimus, voluptate dolor?</p>
+        <p>
+            I'm a Software Engineer student with a passion for full-stack development. Always enthousiastic to learn more.
+        </p>
         
         <h5 class="h4">location</h5>
         <p>Belgium - Ghent</p>
@@ -56,12 +58,12 @@
 
         <h5 class="h4">internship</h5>
         <p class="small">september 2022 - december 2022</p>
-        <p>Liantis, Brugge</p>
+        <p class="bold">Liantis, Brugge</p>
         <p>Full-stack development and integration of a website in Spring Boot Java and Angular</p>
 
         <h5 class="h4">job student</h5>
         <p class="class">september 2014 - present</p>
-        <p>Different companies, Ghent & Ypres</p>
+        <p class="bold">Different companies, Ghent & Ypres</p>
         <p>From delivery driver to IT employee, gained as much experience as possible in the working world.</p>
     </div>
 
@@ -70,7 +72,7 @@
 
         <h5 class="h4">bachelor, software engineer</h5>
         <p class="small">september 2019 - present</p>
-        <p>Howest, Brugge</p>
+        <p class="bold">Howest, Brugge</p>
     </div>
 
     <a href="{{ asset('files/cv_aico-mylleville.pdf') }}" class="button" download>Download my resume</a>

@@ -60,7 +60,7 @@ main {
                 text-transform: lowercase;
             }
             img {
-                border-radius: 100px;
+                border-radius: 50%;
                 width: 40%;
             }
         }
@@ -74,20 +74,22 @@ main {
         border-top: 1px solid #000;
         padding: 1.5rem 0 5rem 0;
 
-        h4 {
-            margin-bottom: 3rem;
-        }
-
         img {
             width: 100%;
+        }
+
+        p span {
+            font-weight: 500;
         }
 
         .h4 {
             margin-top: 2rem;
         }
+    }
 
-        p span {
-            font-weight: 500;
+    #details {
+        .h4 {
+            margin-top: 2rem;
         }
     }
 
@@ -102,6 +104,65 @@ main {
             @include flex(space-between, center);
             img {
                 max-width: 6rem;
+            }
+        }
+    }
+
+    #blog {
+        img {
+            width: 100%;
+        }
+
+        article {
+            margin-top: 2rem;
+
+            h1 {
+                font-size: 1.7rem;
+                font-weight: 600;
+                line-height: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                line-height: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                line-height: 1.6rem;
+            }
+
+            p {
+                margin-bottom: 1rem;
+                line-height: 1.5rem;
+            }
+
+            a {
+                border-bottom: 1px solid $color-font;
+            }
+        }
+    }
+
+    form {
+        margin-bottom: 2rem;
+
+        div {
+            padding: 1.5rem 0.6rem;
+            border-top: 1px solid $color-font;
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
+
+            input, textarea {
+                background-color: $color-background;
+                border: none;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            &:last-of-type {
+                border-bottom: 1px solid $color-font;
             }
         }
     }
