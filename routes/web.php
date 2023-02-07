@@ -5,11 +5,12 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home.index');
-    Route::get('/{id}', 'show')->name('home.show');
+    Route::get('/portfolio/{id}', 'show')->name('home.show');
 });
 
 Route::get('/about', [AboutController::class, 'about'])->name('about');
@@ -32,11 +33,11 @@ Route::controller(BlogController::class)->group(function () {
 
 Route::middleware(['auth', 'user.access:admin'])->group(function () {
     // Home
-    Route::get('/new/create', [AdminController::class, 'portfolioCreate'])->name('home.create');
-    Route::post('/', [AdminController::class, 'portfolioStore'])->name('home.store');
-    Route::put('/{id}', [AdminController::class, 'portfolioUpdate'])->name('home.update');
-    Route::get('/{id}/edit', [AdminController::class, 'portfolioEdit'])->name('home.edit');
-    Route::delete('/{id}', [AdminController::class, 'portfolioDestroy'])->name('home.destroy');
+    Route::get('/portfolio/new/create', [AdminController::class, 'portfolioCreate'])->name('home.create');
+    Route::post('/portfolio', [AdminController::class, 'portfolioStore'])->name('home.store');
+    Route::put('/portfolio/{id}', [AdminController::class, 'portfolioUpdate'])->name('home.update');
+    Route::get('/portfolio/{id}/edit', [AdminController::class, 'portfolioEdit'])->name('home.edit');
+    Route::delete('/portfolio/{id}', [AdminController::class, 'portfolioDestroy'])->name('home.destroy');
 
     // Blog
     Route::get('/blog/new/create', [AdminController::class, "blogCreate"])->name('blog.create');
