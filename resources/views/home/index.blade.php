@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="title">
-        <h2 class="h1">aico mylleville <span>portfolio site.</span></h2>
+        <h2 class="h1">aico mylleville<br> <span>portfolio site.</span></h2>
         <p>Software engineer based in Belgium - Ghent</p>
     </section>
 
@@ -13,6 +13,17 @@
             <div class="text">
                 <h5 class="h4">Frile</h5>
                 <p>E-commerce site</p>
+                <p>Frile is an artist who creates greeting cards and sells them online and in store. This is the website I made for her to sell her beautiful products.</p>
+                <a href="#" class="button">More about Frile</a>
+            </div>
+        </div>
+        <div class="project">
+            <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
+            <div class="text">
+                <h5 class="h4">Frile</h5>
+                <p>E-commerce site</p>
+                <p>Frile is an artist who creates greeting cards and sells them online and in store. This is the website I made for her to sell her beautiful products.</p>
+                <a href="#" class="button">More about Frile</a>
             </div>
         </div>
     </section>

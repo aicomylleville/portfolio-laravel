@@ -8,11 +8,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
-Route::controller(HomeController::class)->group(function () {
-    Route::get('/', 'index')->name('home.index');
-    Route::get('/portfolio/{id}', 'show')->name('home.show');
-});
-
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 Route::controller(ContactController::class)->group(function () {
@@ -45,4 +40,9 @@ Route::middleware(['auth', 'user.access:admin'])->group(function () {
     Route::put('/blog/{id}', [AdminController::class, "blogUpdate"])->name('blog.update');
     Route::get('/blog/{id}/edit', [AdminController::class, "blogEdit"])->name('blog.edit');
     Route::delete('/blog/{id}', [AdminController::class, "blogDestroy"])->name('blog.destroy');
+});
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home.index');
+    Route::get('/{name}', 'show')->name('home.show');
 });

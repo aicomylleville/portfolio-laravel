@@ -2,7 +2,7 @@
     <h1><a href="{{ route('home.index') }}">aico <span>&copy;2023</span></a></h1>
 
     <a href="#" id="openMenu"><img src="{{ asset('assets/icons/menu.png') }}" alt="menu"></a>
-    <a href="#" id="closeMenu" class="hidden"><img src="{{ asset('assets/icons/close.png') }}" alt="menu"></a>
+    <a href="#" class="hidden" id="closeMenu" class="hidden"><img src="{{ asset('assets/icons/close.png') }}" alt="menu"></a>
     <nav>
         <div>
             <ul>
