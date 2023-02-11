@@ -13,6 +13,40 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+    // Admin
+    public function index()
+    {
+        return view('auth.admin');
+    }
+
+    // Portfolio
+    public function portfolioCreate()
+    {
+        return view('home.create');
+    }
+
+    public function portfolioStore(Request $request)
+    {
+        return redirect()->route('admin');
+    }
+
+    public function portfolioEdit($id)
+    {
+        return view('home.update');
+    }
+
+
+    public function portfolioUpdate(Request $request, $id)
+    {
+        return redirect()->route('admin');
+    }
+
+
+    public function portfolioDestroy($id)
+    {
+        return redirect()->route('admin');
+    }
+
 
     // Blog
 
@@ -85,6 +119,6 @@ class AdminController extends Controller
 
         $blog->delete();
 
-        return redirect()->route('blog.index');
+        return redirect()->route('admin');
     }
 }

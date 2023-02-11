@@ -14,7 +14,7 @@
                 <h5 class="h4">Frile</h5>
                 <p>E-commerce site</p>
                 <p>Frile is an artist who creates greeting cards and sells them online and in store. This is the website I made for her to sell her beautiful products.</p>
-                <a href="#" class="button">More about Frile</a>
+                <a href="{{ route('home.show', ['name' => 'frile']) }}" class="button">More about Frile</a>
             </div>
         </div>
         <div class="project">

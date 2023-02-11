@@ -10,23 +10,26 @@
 
     <div class="part">
         <h4 class="h3">profile</h4>
-        <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
-
-        <h5 class="h4">Aico Mylleville</h5>
-        <p>
-            I'm a Software Engineer student with a passion for full-stack development. Always enthousiastic to learn more.
-        </p>
-        
-        <h5 class="h4">location</h5>
-        <p>Belgium - Ghent</p>
-        
-        <h5 class="h4">contact details</h5>
-        <p>hello@aicomylleville.be</p>
-        <p>+32 492 62 98 52</p>
-        
-        <h5 class="h4">socials</h5>
-        <p>LinkedIn</p>
-        <p>Github</p>
+        <div class="content">
+            <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
+            <div class="text">
+                <h5 class="h4">Aico Mylleville</h5>
+                <p>
+                    I'm a Software Engineer student with a passion for full-stack development. Always enthousiastic to learn more.
+                </p>
+                
+                <h5 class="h4">location</h5>
+                <p>Belgium - Ghent</p>
+                
+                <h5 class="h4">contact details</h5>
+                <p>hello@aicomylleville.be</p>
+                <p>+32 492 62 98 52</p>
+                
+                <h5 class="h4">socials</h5>
+                <p>LinkedIn</p>
+                <p>Github</p>
+            </div>
+        </div>
     </div>
 
     <div class="part">

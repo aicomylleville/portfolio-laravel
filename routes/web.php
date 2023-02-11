@@ -27,12 +27,14 @@ Route::controller(BlogController::class)->group(function () {
 });
 
 Route::middleware(['auth', 'user.access:admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
     // Home
-    Route::get('/portfolio/new/create', [AdminController::class, 'portfolioCreate'])->name('home.create');
-    Route::post('/portfolio', [AdminController::class, 'portfolioStore'])->name('home.store');
-    Route::put('/portfolio/{id}', [AdminController::class, 'portfolioUpdate'])->name('home.update');
-    Route::get('/portfolio/{id}/edit', [AdminController::class, 'portfolioEdit'])->name('home.edit');
-    Route::delete('/portfolio/{id}', [AdminController::class, 'portfolioDestroy'])->name('home.destroy');
+    Route::get('/portfolio/new/create', [AdminController::class, 'portfolioCreate'])->name('portfolio.create');
+    Route::post('/portfolio', [AdminController::class, 'portfolioStore'])->name('portfolio.store');
+    Route::put('/portfolio/{id}', [AdminController::class, 'portfolioUpdate'])->name('portfolio.update');
+    Route::get('/portfolio/{id}/edit', [AdminController::class, 'portfolioEdit'])->name('portfolio.edit');
+    Route::delete('/portfolio/{id}', [AdminController::class, 'portfolioDestroy'])->name('portfolio.destroy');
 
     // Blog
     Route::get('/blog/new/create', [AdminController::class, "blogCreate"])->name('blog.create');

@@ -10,6 +10,11 @@
                 <li><a href="{{ route('about') }}">about me</a></li>
                 <li><a href="{{ route('blog.index') }}">blog</a></li>
                 <li><a href="{{ route('contact') }}">contact</a></li>
+                @auth
+                    @if(auth()->user()->type == "admin")
+                        <li><a href="{{ route('admin') }}">Admin</a></li>
+                    @endisset
+                @endauth
             </ul>
         </div>
         <img src="{{ asset('assets/icons/line.png') }}" alt="line">
@@ -30,6 +35,11 @@
                 <li><a href="{{ route('about') }}"  class="h1">about me</a></li>
                 <li><a href="{{ route('blog.index') }}"  class="h1">blog</a></li>
                 <li><a href="{{ route('contact') }}"  class="h1">contact</a></li>
+                @auth
+                    @if(auth()->user()->type == "admin")
+                        <li><a href="{{ route('admin') }}" class="h1">Admin</a></li>
+                    @endisset
+                @endauth
             </ul>
         </div>
         <h2 class="h3">Follow me</h2>

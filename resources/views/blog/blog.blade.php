@@ -13,14 +13,14 @@
             <h5 class="h4">Locked Shields 2022</h5>
             <p>25/01/2023</p>
         </div>
-        <img src="{{ asset('images/me.jpg') }}" alt="">
+        <img src="{{ asset('images/me.jpg') }}" alt="" title="">
     </div>
     <div class="blog">
         <div class="text">
             <h5 class="h4">Locked Shields 2022</h5>
             <p>25/01/2023</p>
         </div>
-        <img src="{{ asset('images/me.jpg') }}" alt="">
+        <img src="{{ asset('images/me.jpg') }}" alt="" title="">
     </div>
 </section>
 

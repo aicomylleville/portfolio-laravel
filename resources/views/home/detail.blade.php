@@ -10,10 +10,12 @@
 <section id="portfolio">
     <div class="part">
         <h4 class="h3">Overview</h4>
-        <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore explicabo error, vitae dicta quisquam voluptatum repudiandae esse quos suscipit dolore voluptate magni minima cumque! Accusantium at molestiae minus odit aspernatur.
-        </p>
+        <div class="content">
+            <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore explicabo error, vitae dicta quisquam voluptatum repudiandae esse quos suscipit dolore voluptate magni minima cumque! Accusantium at molestiae minus odit aspernatur.
+            </p>
+        </div>
     </div>
 
     <div class="part">
