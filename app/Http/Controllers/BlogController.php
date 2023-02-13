@@ -32,8 +32,6 @@ class BlogController extends Controller
 
     public function show($id)
     {
-        return view('blog.detail');
-        /*
         $blog = Blog::find($id);
 
         if ($blog != null) {
@@ -48,6 +46,5 @@ class BlogController extends Controller
         }
 
         return redirect()->route('blog.index')->with('error', 'Blog doesn\'t exist.');
-        */
     }
 }

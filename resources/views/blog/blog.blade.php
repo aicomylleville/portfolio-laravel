@@ -8,20 +8,15 @@
 </section>
 
 <section id="blogs">
-    <div class="blog">
-        <div class="text">
-            <h5 class="h4">Locked Shields 2022</h5>
-            <p>25/01/2023</p>
-        </div>
-        <img src="{{ asset('images/me.jpg') }}" alt="" title="">
-    </div>
-    <div class="blog">
-        <div class="text">
-            <h5 class="h4">Locked Shields 2022</h5>
-            <p>25/01/2023</p>
-        </div>
-        <img src="{{ asset('images/me.jpg') }}" alt="" title="">
-    </div>
+    @foreach ($blogs as $blog)
+        <a href="{{ route('blog.show', $blog -> id) }}" class="blog">
+            <div class="text">
+                <h5 class="h4">{{ $blog -> title }}</h5>
+                <p>{{ $blog -> date }}</p>
+            </div>
+            <img src="{{ asset($blog -> image) }}" alt="{{ $blog -> title }}" title="{{ $blog -> title }}">
+        </a>
+    @endforeach
 </section>
 
 <a href="{{ route('about') }}" class="button">More about me</a>

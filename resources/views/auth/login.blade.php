@@ -11,11 +11,11 @@
         
         <div>
             <label for="email" class="h4">E-mail</label>
-            <input type="email" name="email" id="email" placeholder="john.doe@mail.com">
+            <input type="email" name="email" id="email" placeholder="john.doe@mail.com" autocomplete="off">
         </div>
         <div>
             <label for="password" class="h4">Password</label>
-            <input type="password" name="password" id="password" placeholder="A very secret password">
+            <input type="password" name="password" id="password" placeholder="A very secret password" autocomplete="off">
         </div>
         <input type="submit" value="Login">
         

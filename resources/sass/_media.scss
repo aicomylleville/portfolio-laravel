@@ -39,8 +39,12 @@
                         align-items: flex-start;
                         flex-direction: column;
 
-                        div {
-                            justify-content: space-between;
+                        div, .buttons {
+                            justify-content: flex-start;
+
+                            &.buttons {
+                                justify-content: space-between;
+                            }
                         }
 
                         .button {

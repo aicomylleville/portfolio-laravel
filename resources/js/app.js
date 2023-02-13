@@ -8,6 +8,10 @@ function init() {
     document.querySelector('#closeMenu').addEventListener('click', closeMenu);
 
     document.querySelector('h1 a').addEventListener('mouseover', showSurname);
+
+    if (document.querySelector('#blog') != undefined) {
+        addHTMLSyntax();
+    }
 }
 
 function openMenu(e) {
@@ -30,4 +34,8 @@ function showSurname() {
     setTimeout(() => {
         document.querySelector('h1 a span').innerHTML = text;
     }, 1000);
+}
+
+function addHTMLSyntax() {
+    document.querySelector('#blog article').innerHTML = document.querySelector('#blog article').textContent;
 }
