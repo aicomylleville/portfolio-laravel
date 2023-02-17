@@ -16,70 +16,34 @@
     <section>
         <h3 class="h3">Portfolio</h3>
         <a href="{{ route('portfolio.create') }}" class="button">Create new portfolio</a>
+        @foreach ($portfolios as $portfolio)
         <article>
             <div>
-                <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
-                <h5 class="h4">Frile</h5>
+                <img src="{{ asset($portfolio -> image) }}" alt="{{ $portfolio -> name }}" title="{{ $portfolio -> name }}">
+                <h5 class="h4">{{ $portfolio -> name }}</h5>
             </div>
             <div class="buttons">
-                <a href="{{ route('portfolio.edit', [1]) }}" class="button">Edit</a>
-                <a href="{{ route('portfolio.destroy', [1]) }}" class="button">Delete</a>
+                <a href="{{ route('portfolio.edit', ['id' => $portfolio -> id]) }}" class="button">Edit</a>
+                <a href="{{ route('portfolio.destroy', ['id' => $portfolio -> id]) }}" class="button">Delete</a>
             </div>
         </article>
-        <article>
-            <div>
-                <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
-                <h5 class="h4">Frile</h5>
-            </div>
-            <div class="buttons">
-                <a href="{{ route('portfolio.edit', [1]) }}" class="button">Edit</a>
-                <a href="{{ route('portfolio.destroy', [1]) }}" class="button">Delete</a>
-            </div>
-        </article>
-        <article>
-            <div>
-                <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
-                <h5 class="h4">Frile</h5>
-            </div>
-            <div class="buttons">
-                <a href="{{ route('portfolio.edit', [1]) }}" class="button">Edit</a>
-                <a href="{{ route('portfolio.destroy', [1]) }}" class="button">Delete</a>
-            </div>
-        </article>
+        @endforeach
     </section>
     <section>
         <h3 class="h3">Blog</h3>
         <a href="{{ route('blog.create') }}" class="button">Create new blog</a>
-        <article>
-            <div>
-                <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
-                <h5 class="h4">Locked Shields 2022</h5>
-            </div>
-            <div class="buttons">
-                <a href="{{ route('blog.edit', [1]) }}" class="button">Edit</a>
-                <a href="{{ route('blog.destroy', [1]) }}" class="button">Delete</a>
-            </div>
-        </article>
-        <article>
-            <div>
-                <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
-                <h5 class="h4">Locked Shields 2022</h5>
-            </div>
-            <div class="buttons">
-                <a href="{{ route('blog.edit', [1]) }}" class="button">Edit</a>
-                <a href="{{ route('blog.destroy', [1]) }}" class="button">Delete</a>
-            </div>
-        </article>
-        <article>
-            <div>
-                <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
-                <h5 class="h4">Locked Shields 2022</h5>
-            </div>
-            <div class="buttons">
-                <a href="{{ route('blog.edit', [1]) }}" class="button">Edit</a>
-                <a href="{{ route('blog.destroy', [1]) }}" class="button">Delete</a>
-            </div>
-        </article>
+        @foreach ($blogs as $blog)
+            <article>
+                <div>
+                    <img src="{{ asset($blog -> image) }}" alt="{{ $blog -> title }}" title="{{ $blog -> title }}">
+                    <h5 class="h4">{{ $blog -> title }}</h5>
+                </div>
+                <div class="buttons">
+                    <a href="{{ route('blog.edit', ['id' => $blog -> id]) }}" class="button">Edit</a>
+                    <a href="{{ route('blog.destroy', ['id' => $blog -> id]) }}" class="button">Delete</a>
+                </div>
+            </article>
+        @endforeach
     </section>
 </section>
 

@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(Request $request) {
-        return view('home.index');
+        $portfolios = app('App\Http\Controllers\PortfolioController')->index();
+        return view('home.index', ['portfolios' => $portfolios]);
     }
 
-    public function show($id) {
-        return view('home.detail');
+    public function show($name) {
+        $portfolio = app('App\Http\Controllers\PortfolioController')->show($name);
+        
+        return view('home.detail', ['portfolio' => $portfolio]);
     }
 }

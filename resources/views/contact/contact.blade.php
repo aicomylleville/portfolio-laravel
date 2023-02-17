@@ -38,14 +38,14 @@
 
         <h5 class="h4">location</h5>
         <p>Belgium - Ghent</p>
-        
+
         <h5 class="h4">contact details</h5>
         <p>hello@aicomylleville.be</p>
         <p>+32 492 62 98 52</p>
-        
+
         <h5 class="h4">socials</h5>
-        <p>LinkedIn</p>
-        <p>Github</p>
+        <p><a href="https://www.linkedin.com/in/aicomylleville/" target="blank">LinkedIn</a></p>
+        <p><a href="https://github.com/aicomylleville" target="blank">Github</a></p>
     </section>
 
 @endsection

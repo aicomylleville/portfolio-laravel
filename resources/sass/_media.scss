@@ -11,8 +11,8 @@
         }
 
         main {
-            #projects {
-                .project {
+            #portfolios {
+                .portfolio {
                     .text {
                         p:nth-child(3) {
                             display: none;
@@ -70,8 +70,8 @@
 @media (min-width: 46rem) {
     body {
         main {
-            #projects {
-                .project {
+            #portfolios {
+                .portfolio {
                     flex-direction: row-reverse;
                     align-items: center;
                     gap: 2rem;

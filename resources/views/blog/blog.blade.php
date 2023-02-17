@@ -7,6 +7,14 @@
     <h3 class="h2">My interests.</h3>
 </section>
 
+<section id="filter">
+    <ul>
+        <li><a href="{{ route('blog.index', ['filter' => 'all']) }}" class="selected" data-id="all">All</a></li>
+        <li><a href="{{ route('blog.index', ['filter' => 'ti']) }}" data-id="ti">TI</a></li>
+        <li><a href="{{ route('blog.index', ['filter' => 'personal']) }}" data-id="personal">Personal</a></li>
+    </ul>
+</section>
+
 <section id="blogs">
     @foreach ($blogs as $blog)
         <a href="{{ route('blog.show', $blog -> id) }}" class="blog">

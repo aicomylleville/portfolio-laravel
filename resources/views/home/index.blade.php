@@ -7,25 +7,17 @@
         <p>Software engineer based in Belgium - Ghent</p>
     </section>
 
-    <section id="projects">
-        <div class="project">
-            <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
-            <div class="text">
-                <h5 class="h4">Frile</h5>
-                <p>E-commerce site</p>
-                <p>Frile is an artist who creates greeting cards and sells them online and in store. This is the website I made for her to sell her beautiful products.</p>
-                <a href="{{ route('home.show', ['name' => 'frile']) }}" class="button">More about Frile</a>
+    <section id="portfolios">
+        @foreach ($portfolios as $portfolio)
+            <div class="portfolio">
+                <img src="{{ asset($portfolio -> image) }}" alt="{{ $portfolio -> name }}" title="{{ $portfolio -> name }}">
+                <div class="text">
+                    <h5 class="h4">{{ $portfolio -> name }}</h5>
+                    <p>{{ $portfolio -> type }}</p>
+                    <a href="{{ route('portfolio.show', ['name' => $portfolio -> name]) }}" class="button">More about {{ $portfolio -> name }}</a>
+                </div>
             </div>
-        </div>
-        <div class="project">
-            <img src="{{ asset('images/frile.png') }}" alt="frile" title="frile">
-            <div class="text">
-                <h5 class="h4">Frile</h5>
-                <p>E-commerce site</p>
-                <p>Frile is an artist who creates greeting cards and sells them online and in store. This is the website I made for her to sell her beautiful products.</p>
-                <a href="#" class="button">More about Frile</a>
-            </div>
-        </div>
+        @endforeach
     </section>
 
     <section class="about">

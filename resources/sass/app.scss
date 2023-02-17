@@ -57,10 +57,10 @@ main {
         margin-bottom: 6.5rem;
     }
 
-    #projects {
+    #portfolios {
         margin-bottom: 2.5rem;
 
-        .project {
+        .portfolio {
             margin-bottom: 3rem;
             @include flex(space-between, flex-start);
             flex-direction: column;
@@ -113,6 +113,21 @@ main {
     #details {
         .h4 {
             margin-top: 2rem;
+        }
+    }
+
+    #filter {
+        margin-bottom: 1.5rem;
+        ul {
+            @include flex(flex-start, center);
+            gap: 1rem;
+
+            a {
+                font-weight: 600;
+                &.selected {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 
