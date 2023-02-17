@@ -8,6 +8,7 @@ class HomeController extends Controller
 {
     public function index(Request $request) {
         $portfolios = app('App\Http\Controllers\PortfolioController')->index();
+
         return view('home.index', ['portfolios' => $portfolios]);
     }
 

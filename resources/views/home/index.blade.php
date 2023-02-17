@@ -8,6 +8,16 @@
     </section>
 
     <section id="portfolios">
+        @if (sizeof($portfolios) == 0)
+            <div class="portfolio">
+                <img src="{{ asset('images/no_portfolio.webp') }}" alt="No portfolios yet" title="No portfolios yet">
+                <div class="text">
+                    <h5 class="h4">No portfolios yet</h5>
+                    <p>I'm working on it!</p>
+                    <a href="{{ route('blog.index') }}" class="button">Check out my blogs</a>
+                </div>
+            </div>
+        @endif
         @foreach ($portfolios as $portfolio)
             <div class="portfolio">
                 <img src="{{ asset($portfolio -> image) }}" alt="{{ $portfolio -> name }}" title="{{ $portfolio -> name }}">

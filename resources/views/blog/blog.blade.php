@@ -7,6 +7,14 @@
     <h3 class="h2">My interests.</h3>
 </section>
 
+
+
+@if (sizeof($blogs) == 0)
+    <section>
+        <h2 class="h3">No blogs yet</h2>
+        <h3 class="h4">They're in the making, I promise!</h3>
+    </section>
+@else
 <section id="filter">
     <ul>
         <li><a href="{{ route('blog.index', ['filter' => 'all']) }}" class="selected" data-id="all">All</a></li>
@@ -26,6 +34,8 @@
         </a>
     @endforeach
 </section>
+@endif
+
 
 <a href="{{ route('about') }}" class="button">More about me</a>
 
