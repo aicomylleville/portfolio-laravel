@@ -9,8 +9,10 @@ function init() {
 
     document.querySelector('h1 a').addEventListener('mouseover', showSurname);
 
-    if (document.querySelector('#blog') != undefined) {
+    if (document.querySelector('.markdown') != undefined) {
         addHTMLSyntax();
+    } else {
+        console.log('eyo');
     }
 }
 
@@ -37,5 +39,5 @@ function showSurname() {
 }
 
 function addHTMLSyntax() {
-    document.querySelector('#blog article').innerHTML = document.querySelector('#blog article').textContent;
+    document.querySelector('.markdown').innerHTML = document.querySelector('.markdown').textContent;
 }

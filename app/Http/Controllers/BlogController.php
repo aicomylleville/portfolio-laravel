@@ -70,7 +70,7 @@ class BlogController extends Controller
 
         $blog->save();
 
-        return redirect()->route('blog.index', ['filter' => 'all']);
+        return redirect()->route('blog.show', ['blog' => $blog]);
     }
 
     /**

@@ -7,31 +7,44 @@
         <h3 class="h2">Let's work together.</h3>
     </section>
 
-    <form action="#" method="POST">
-        @csrf
+    <section>
+        @if($errors->any())
+            <h1>There are errors!</h1>
+            <div class="errors">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <div class="input">
-            <label class="h4" for="firstname">firstname</label>
-            <input type="text" id="firstname" name="firstname" placeholder="John">
-        </div>
-        <div class="input">
-            <label class="h4" for="lastname">lastname</label>
-            <input type="text" id="lastname" name="lastname" placeholder="Doe">
-        </div>
-        <div class="input">
-            <label class="h4" for="email">e-mail</label>
-            <input type="email" id="email" name="email" placeholder="john.doe@mail.com">
-        </div>
-        <div class="input">
-            <label class="h4" for="subject">subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Example subject">
-        </div>
-        <div class="input">
-            <label class="h4" for="message">message</label>
-            <textarea name="message" id="message" cols="30" rows="6" placeholder="Example message"></textarea>
-        </div>
-        <input type="submit" value="Send">
-    </form>
+        <form action="{{ route('contact.mail') }}" method="POST">
+            @csrf
+
+            <div class="input">
+                <label class="h4" for="firstname">firstname</label>
+                <input type="text" id="firstname" name="firstname" placeholder="John" autocomplete="off">
+            </div>
+            <div class="input">
+                <label class="h4" for="lastname">lastname</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Doe" autocomplete="off">
+            </div>
+            <div class="input">
+                <label class="h4" for="email">e-mail</label>
+                <input type="email" id="email" name="email" placeholder="john.doe@mail.com" autocomplete="off">
+            </div>
+            <div class="input">
+                <label class="h4" for="subject">subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Example subject" autocomplete="off">
+            </div>
+            <div class="input">
+                <label class="h4" for="message">message</label>
+                <textarea name="message" id="message" cols="30" rows="6" placeholder="Example message"></textarea>
+            </div>
+            <input type="submit" value="Send">
+        </form>
+    </section>
 
     <section id="details">
         <img src="{{ asset('assets/icons/arrow-down.png') }}" alt="arrow" title="arrow">

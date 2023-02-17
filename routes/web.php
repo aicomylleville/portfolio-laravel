@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
+Route::get('/404', [HomeController::class, 'fourOFour'])->name('404');
+
 Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'index')->name('contact');
     Route::post('/contact', 'mail')->name('contact.mail');

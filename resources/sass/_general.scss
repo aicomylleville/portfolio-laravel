@@ -104,3 +104,34 @@ form {
         }
     }
 }
+
+.markdown {
+    margin-top: 2rem;
+
+    h1 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.6rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        line-height: 1.5rem;
+    }
+
+    a {
+        border-bottom: 1px solid $color-font;
+    }
+}

@@ -13,7 +13,15 @@ class HomeController extends Controller
 
     public function show($name) {
         $portfolio = app('App\Http\Controllers\PortfolioController')->show($name);
-        
-        return view('home.detail', ['portfolio' => $portfolio]);
+
+        if ($portfolio != null) {
+            return view('home.detail', ['portfolio' => $portfolio]);
+        }
+
+        return redirect()->route('404');
+    }
+
+    public function fourOFour() {
+        return view('extra.404');
     }
 }

@@ -12,7 +12,7 @@
         <h4 class="h3">Overview</h4>
         <div class="content">
             <img src="{{ asset($portfolio -> image) }}" alt="frile" title="frile">
-            <p>
+            <p data-article="{{ $portfolio -> name }}" class="markdown">
                 {{ $portfolio -> description }}
             </p>
         </div>
@@ -20,7 +20,7 @@
 
     <div class="part">
         <h4 class="h3">links</h4>
-        
+
         <h5 class="h4">site url</h5>
         <p><a href="{{ $portfolio -> site_url }}">{{ $portfolio -> site_url }}</a></p>
 

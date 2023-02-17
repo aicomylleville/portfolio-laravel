@@ -12,7 +12,7 @@
 </section>
 
 <section id="admin">
-    
+
     <section>
         <h3 class="h3">Portfolio</h3>
         <a href="{{ route('portfolio.create') }}" class="button">Create new portfolio</a>
@@ -24,7 +24,11 @@
             </div>
             <div class="buttons">
                 <a href="{{ route('portfolio.edit', ['id' => $portfolio -> id]) }}" class="button">Edit</a>
-                <a href="{{ route('portfolio.destroy', ['id' => $portfolio -> id]) }}" class="button">Delete</a>
+                <form action="{{ route('portfolio.destroy', [$portfolio -> id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Delete">
+                </form>
             </div>
         </article>
         @endforeach
@@ -40,7 +44,11 @@
                 </div>
                 <div class="buttons">
                     <a href="{{ route('blog.edit', ['id' => $blog -> id]) }}" class="button">Edit</a>
-                    <a href="{{ route('blog.destroy', ['id' => $blog -> id]) }}" class="button">Delete</a>
+                    <form action="{{ route('blog.destroy', [$blog -> id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete">
+                    </form>
                 </div>
             </article>
         @endforeach

@@ -8,7 +8,7 @@
     </section>
 
     <section>
-        <h4 class="h3">Thank you john</h4>
+        <h4 class="h3">Thank you {{ $firstname }}</h4>
         <h5 class="h4">I will contact you as soon as possible!</h5>
     </section>
 

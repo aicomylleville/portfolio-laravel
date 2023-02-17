@@ -10,9 +10,9 @@
 
     <section id="blog">
         <img src="{{ asset($blog -> image) }}" alt="{{ $blog -> title }}" title="{{ $blog -> title }}">
-        <article data-article="{{ $blog -> title }}">
+        <article data-article="{{ $blog -> title }}" class="markdown">
             {{ $blog -> article }}
         </article>
     </section>
-    
+
 @endsection

@@ -11,7 +11,8 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $name;
+    protected $firstname;
+    protected $lastname;
     protected $email;
     public $subject;
     protected $body;
@@ -21,9 +22,10 @@ class ContactMail extends Mailable
      *
      * @return void
      */
-    public function __construct($name, $email, $subject, $message)
+    public function __construct($firstname, $lastname, $email, $subject, $message)
     {
-        $this->name = $name;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
         $this->email = $email;
         $this->subject = $subject;
         $this->body = $message;
@@ -38,7 +40,8 @@ class ContactMail extends Mailable
     {
         return $this->view('mail.contact')
                         ->with([
-                            'name' => $this->name,
+                            'firstname' => $this->firstname,
+                            'lastname' => $this->lastname,
                             'email' => $this->email,
                             'body' => $this->body
                         ])
