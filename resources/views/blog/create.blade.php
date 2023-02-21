@@ -1,47 +1,57 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1 data-page="blog"><a href="/">aicoMylleville</a><span>.blog()</span></h1>
-@endsection
-
 @section('content')
 
-<main data-page="blog">
-    <section id="createBlog">
-        @if($errors->any())
-            <div class="errors">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+<section class="title">
+    <h2 class="h1">Create blog</h2>
+    <h3 class="h2">Woop woop, new event!</h3>
+</section>
 
-        <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+<section>
+    @if($errors->any())
+        <div class="errors">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title">
+    <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
 
-            <label for="description">Description</label>
-            <input type="text" name="description" id="description">
+        <div>
+            <label class="h4" for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="Title" autocomplete="off">
+        </div>
 
-            <label for="type">Type</label>
+        <div>
+            <label class="h4" for="description">Description</label>
+            <input type="text" name="description" id="description" placeholder="description" autocomplete="off">
+        </div>
+
+        <div>
+            <label class="h4" for="type">Type</label>
             <select name="type" id="type">
                 <option value="ti">TI</option>
                 <option value="personal">Personal</option>
             </select>
+        </div>
 
-            <label for="image">Image</label>
+        <div>
+            <label for="image" class="h4">Image</label>
             <input type="file" name="image" id="image" accept="image/png, image/jpeg">
+        </div>
 
-            <label for="article">Article</label>
-            <textarea name="article" id="article" cols="30" rows="20"></textarea>
+        <div>
+            <label for="article" class="h4">Article</label>
+            <textarea name="article" id="article" cols="30" rows="10" placeholder="Article" autocomplete="off"></textarea>
+        </div>
 
-            <input type="submit" value="Post">
-        </form>
-    </section>
-</main>
+        <input type="submit" value="Post">
+    </form>
+
+</section>
 
 @endsection

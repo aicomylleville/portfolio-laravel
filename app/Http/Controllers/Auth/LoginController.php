@@ -49,7 +49,7 @@ class LoginController extends Controller
         $input = $request->all();
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            return redirect()->route('home');
+            return redirect()->route('admin');
         } else {
             return redirect()->route('login')
                                 ->with('error', 'Email or/and Password is wrong.');

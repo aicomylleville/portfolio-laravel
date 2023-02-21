@@ -1,38 +1,40 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1 data-page="blog"><a href="/">aicoMylleville</a><span>.blog()</span></h1>
-@endsection
-
 @section('content')
 
-<main data-page="blogs">
-    <section id="filter">
-        <ul>
-            <li><a href="{{ route('blog.index', ['filter' => 'all']) }}" class="selected" data-id="all">All</a></li>
-            <li><a href="{{ route('blog.index', ['filter' => 'ti']) }}" data-id="ti">TI</a></li>
-            <li><a href="{{ route('blog.index', ['filter' => 'personal']) }}" data-id="personal">Personal</a></li>
-        </ul>
-        @auth
-            @if(auth()->user()->type == "admin")
-                <a href="{{ route('blog.create') }}" class="button" id="create">Create</a>
-            @endif
-        @endauth
+<section class="title">
+    <h2 class="h1">blog</h2>
+    <h3 class="h2">My interests.</h3>
+</section>
+
+@if (sizeof($blogs) == 0)
+    <section>
+        <h2 class="h3">No blogs yet</h2>
+        <h3 class="h4">They're in the making, I promise!</h3>
     </section>
-    <section id="blogs">
-        @foreach ($blogs as $blog)
-            <a href="{{ route('blog.show', $blog -> id) }}" class="hiddenBlog">
-                <article>
-                    <div>
-                        <h2>{{ $blog -> title }}</h2>
-                        <h3>{{ $blog -> description }}</h3>
-                        <h4>{{ $blog -> date }}</h4>
-                    </div>
-                    <img src="{{ asset($blog->image) }}" alt="{{ $blog -> title }}" title="{{ $blog -> title }}">
-                </article>
-            </a>
-        @endforeach
-    </section>
-</main>
+@else
+<section id="filter">
+    <ul>
+        <li><a href="{{ route('blog.index', ['filter' => 'all']) }}" class="selected" data-id="all">All</a></li>
+        <li><a href="{{ route('blog.index', ['filter' => 'ti']) }}" data-id="ti">TI</a></li>
+        <li><a href="{{ route('blog.index', ['filter' => 'personal']) }}" data-id="personal">Personal</a></li>
+    </ul>
+</section>
+
+<section id="blogs">
+    @foreach ($blogs as $blog)
+        <a href="{{ route('blog.show', $blog -> id) }}" class="blog">
+            <div class="text">
+                <h5 class="h4">{{ $blog -> title }}</h5>
+                <p>{{ $blog -> date }}</p>
+            </div>
+            <img src="{{ asset($blog -> image) }}" alt="{{ $blog -> title }}" title="{{ $blog -> title }}">
+        </a>
+    @endforeach
+</section>
+@endif
+
+
+<a href="{{ route('about') }}" class="button">More about me</a>
 
 @endsection

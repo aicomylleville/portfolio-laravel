@@ -15,20 +15,21 @@ class ContactController extends Controller
     public function mail(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
             'message' => 'required',
         ]);
 
-        $name = $request->input('name');
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
         $email = $request->input('email');
         $subject = $request->input('subject');
         $message = $request->input('message');
 
+        Mail::to('hello@aicomylleville.be')->send(new ContactMail($firstname, $lastname, $email, $subject, $message));
 
-        Mail::to('hello@aicomylleville.be')->send(new ContactMail($name, $email, $subject, $message));
-
-        return view('contact.thanks', ['name' => $name]);
+        return view('contact.thanks', ['firstname' => $firstname, 'email' => $email]);
     }
 }

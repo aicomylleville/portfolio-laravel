@@ -2,108 +2,42 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
-const menu = document.querySelector('#menu');
-const page = document.querySelector('main').dataset.page;
-
-
-let animatedPlace;
-let animatedText;
-let i = 0;
 
 function init() {
+    document.querySelector('#openMenu').addEventListener('click', openMenu);
+    document.querySelector('#closeMenu').addEventListener('click', closeMenu);
 
-    toggleSelectedNav();
-    menu.addEventListener('click', toggleMobileMenu);
+    document.querySelector('h1 a').addEventListener('mouseover', showSurname);
 
-    switch(page) {
-        case "blogs":
-            toggleSelectedFilter();
-            break;
-        case "blog":
-            addHtmlFromMarkdown();
-            animateBlogTyping();
-            break;
-    }
-
-
-    if (document.querySelector('#thankYou') != undefined) {
-        animateContactTyping();
-    }
-}
-
-// General
-function toggleSelectedNav() {
-    const page = document.querySelector('h1').dataset.page;
-
-    if (page) {
-        showSelectedNav(page);
-    }
-}
-
-function showSelectedNav(page) {
-    document.querySelectorAll('nav a').forEach((a) => a.classList.remove('selected'));
-    document.querySelector('nav a[data-nav="' + page + '"').classList.add('selected');
-}
-
-
-function toggleMobileMenu() {
-    const visable = nav.getAttribute('data-visable');
-
-    if (visable === "false") {
-        showMobileMenu(true);
+    if (document.querySelector('.markdown') != undefined) {
+        addHTMLSyntax();
     } else {
-        showMobileMenu(false);
+        console.log('eyo');
     }
 }
 
-function showMobileMenu(visable) {
-    nav.setAttribute('data-visable', visable);
+function openMenu(e) {
+    document.querySelector('#mobileMenu').classList.remove('hidden');
+    document.querySelector('#openMenu').classList.add('hidden');
+    document.querySelector('#closeMenu').classList.remove('hidden');
+    document.querySelector('main').classList.add('hidden');
 }
 
-
-// Pages
-function toggleSelectedFilter() {
-    let filter = getFilter();
-    if (filter != null) {
-        showSelectedFilter(filter);
-    }
+function closeMenu(e) {
+    document.querySelector('#mobileMenu').classList.add('hidden');
+    document.querySelector('#openMenu').classList.remove('hidden');
+    document.querySelector('#closeMenu').classList.add('hidden');
+    document.querySelector('main').classList.remove('hidden');
 }
 
-function getFilter() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('filter');
+function showSurname() {
+    let text = document.querySelector('h1 a span').textContent;
+    document.querySelector('h1 a span').innerHTML = "Mylleville";
+    setTimeout(() => {
+        document.querySelector('h1 a span').innerHTML = text;
+    }, 1000);
 }
 
-function showSelectedFilter(filter) {
-    document.querySelectorAll('#filter a').forEach((f) => f.classList.remove('selected'))
-    document.querySelector("#filter a[data-id='" + filter + "'").classList.add('selected');
-}
-
-
-function animateBlogTyping() {
-    animatedPlace = document.querySelector('h1 span#blogTitle');
-    animatedText = animatedPlace.innerText;
-    animatedPlace.innerHTML = "";
-    showTypingAnimation();
-}
-
-function animateContactTyping() {
-    animatedPlace = document.querySelector('h1 span#thanks');
-    animatedText = animatedPlace.innerText;
-    animatedPlace.innerHTML = "";
-    showTypingAnimation();
-}
-
-function showTypingAnimation() {
-    if (i < animatedText.length) {
-        animatedPlace.innerHTML += animatedText.charAt(i);
-        i++;
-        setTimeout(showTypingAnimation, 60);
-    }
-}
-
-
-function addHtmlFromMarkdown() {
-    const article = document.querySelector('#blog article');
-    article.innerHTML = `${article.textContent}`;
+function addHTMLSyntax() {
+    document.querySelector('.markdown').innerHTML = document.querySelector('.markdown').textContent;
 }

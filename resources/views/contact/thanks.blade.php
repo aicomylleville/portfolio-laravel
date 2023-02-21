@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
-@section('title')
-    <h1 data-page="contact"><span><a href="{{ route('contact') }}" class="theme">.contact</a>(</span><span id="thanks">'Thank you!'</span><span>)</span></h1>
-@endsection
-
 @section('content')
 
-<main>
-    <section id="thankYou">
-        <h2>Thank you {{ $name }}</h2>
-        <p>I will get back to you as soon as possible!</p>
+    <section class="title">
+        <h2 class="h1">contact</h2>
+        <h3 class="h2">We're off to a good start!</h3>
     </section>
-</main>
+
+    <section>
+        <h4 class="h3">Thank you {{ $firstname }}</h4>
+        <h5 class="h4">I will contact you as soon as possible!</h5>
+    </section>
 
 @endsection

@@ -1,3 +1,4 @@
-<h3>{{ $name }} ({{ $email }})</h3>
+<h1>{{ $firstname }} {{ $lastname }}</h1>
+<a href="mailto:{{ $email }}">{{ $email }}</a>
 
 <p>{{ $body }}</p>
