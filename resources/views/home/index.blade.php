@@ -35,7 +35,7 @@
         <p>
             I'm a Software Engineer student with a passion for full-stack development. Always enthousiastic to learn more.
         </p>
-        <a href="{{ route('about') }}" class="button">About me</a>
+        <a href="{{ route('about') }}" class="button">More about me</a>
     </section>
 
     <section class="contact">

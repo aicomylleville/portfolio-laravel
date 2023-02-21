@@ -7,8 +7,6 @@
     <h3 class="h2">My interests.</h3>
 </section>
 
-
-
 @if (sizeof($blogs) == 0)
     <section>
         <h2 class="h3">No blogs yet</h2>
