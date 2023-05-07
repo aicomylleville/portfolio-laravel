@@ -53,8 +53,8 @@
         <p>Belgium - Ghent</p>
 
         <h5 class="h4">contact details</h5>
-        <p>hello@aicomylleville.be</p>
-        <p>+32 492 62 98 52</p>
+        <p><a href="mailto:hello@aicomylleville.be">hello@aicomylleville.be</a></p>
+        <p><a href="tel:+32492629852">+32 492 62 98 52</a></p>
 
         <h5 class="h4">socials</h5>
         <p><a href="https://www.linkedin.com/in/aicomylleville/" target="blank">LinkedIn</a></p>

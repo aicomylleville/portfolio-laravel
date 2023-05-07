@@ -9,10 +9,30 @@ function init() {
 
     document.querySelector('h1 a').addEventListener('mouseover', showSurname);
 
+    showSelectedMenu();
+
+    if (document.querySelector('#filter') != undefined) {
+        showSelectedFilter();
+    }
+
     if (document.querySelector('.markdown') != undefined) {
         addHTMLSyntax();
-    } else {
-        console.log('eyo');
+    }
+}
+
+function showSelectedMenu() {
+    const path = window.location.pathname;
+
+    document.querySelectorAll('nav ul li a').forEach((nav) => nav.classList.remove('selected'));
+
+    if (path === '/') {
+        document.querySelector('nav ul li a[data-nav="home"]').classList.add('selected');
+    } else if (path.includes('about')) {
+        document.querySelector('nav ul li a[data-nav="about"]').classList.add('selected');
+    } else if (path.includes('blog')) {
+        document.querySelector('nav ul li a[data-nav="blog"]').classList.add('selected');
+    } else if (path.includes('contact')) {
+        document.querySelector('nav ul li a[data-nav="contact"]').classList.add('selected');
     }
 }
 
@@ -40,4 +60,15 @@ function showSurname() {
 
 function addHTMLSyntax() {
     document.querySelector('.markdown').innerHTML = document.querySelector('.markdown').textContent;
+}
+
+function showSelectedFilter() {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop)
+    });
+
+    if (params.filter != null) {
+        document.querySelectorAll('#filter ul li a').forEach((filter) => filter.classList.remove('selected'));
+        document.querySelector('#filter ul li a[data-filter="' + params.filter + '"]').classList.add('selected');
+    }
 }

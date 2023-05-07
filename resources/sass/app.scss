@@ -23,6 +23,10 @@ header {
         ul {
             @include flex(flex-end, center);
             gap: 1.2rem;
+
+            a.selected {
+                font-weight: 600;
+            }
         }
     }
 

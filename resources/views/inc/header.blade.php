@@ -6,10 +6,10 @@
     <nav>
         <div>
             <ul>
-                <li><a href="{{ route('home.index') }}">home</a></li>
-                <li><a href="{{ route('about') }}">about me</a></li>
-                <li><a href="{{ route('blog.index') }}">blog</a></li>
-                <li><a href="{{ route('contact') }}">contact</a></li>
+                <li><a href="{{ route('home.index') }}" class="selected" data-nav="home">home</a></li>
+                <li><a href="{{ route('about') }}" data-nav="about">about me</a></li>
+                <li><a href="{{ route('blog.index') }}" data-nav="blog">blog</a></li>
+                <li><a href="{{ route('contact') }}" data-nav="contact">contact</a></li>
                 @auth
                     @if(auth()->user()->type == "admin")
                         <li><a href="{{ route('admin') }}">Admin</a></li>

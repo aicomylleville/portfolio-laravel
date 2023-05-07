@@ -10,7 +10,7 @@
     <section id="portfolios">
         @if (sizeof($portfolios) == 0)
             <div class="portfolio">
-                <img src="{{ asset('images/no_portfolio.webp') }}" alt="No portfolios yet" title="No portfolios yet">
+                <img src="{{ asset('images/no_portfolios.jpg') }}" alt="No portfolios yet" title="No portfolios yet">
                 <div class="text">
                     <h5 class="h4">No portfolios yet</h5>
                     <p>I'm working on it!</p>
@@ -40,7 +40,7 @@
 
     <section class="contact">
         <div>
-            <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
+            <img src="{{ asset('images/me.png') }}" alt="me" title="me">
             <p>Please feel free to contact me by e-mail or <a href="{{ route('contact') }}">form</a>.</p>
         </div>
         <a href="mailto:hello@aicomylleville.be">hello@aicomylleville.be <img src="{{ asset('assets/icons/arrow-up.png') }}" alt=""></a>

@@ -11,35 +11,35 @@
     <div class="part">
         <h4 class="h3">profile</h4>
         <div class="content">
-            <img src="{{ asset('images/me.jpg') }}" alt="me" title="me">
+            <img src="{{ asset('images/me.png') }}" alt="me" title="me">
             <div class="text">
                 <h5 class="h4">Aico Mylleville</h5>
                 <p>
                     I'm a Software Engineer student with a passion for full-stack development. Always enthousiastic to learn more.
                 </p>
-                
+
                 <h5 class="h4">location</h5>
                 <p>Belgium - Ghent</p>
-                
+
                 <h5 class="h4">contact details</h5>
-                <p>hello@aicomylleville.be</p>
-                <p>+32 492 62 98 52</p>
-                
+                <p><a href="mailto:hello@aicomylleville.be">hello@aicomylleville.be</a></p>
+                <p><a href="tel:+32492629852">+32 492 62 98 52</a></p>
+
                 <h5 class="h4">socials</h5>
-                <p>LinkedIn</p>
-                <p>Github</p>
+                <p><a href="https://www.linkedin.com/in/aicomylleville/" target="_blank">LinkedIn</a></p>
+                <p><a href="https://github.com/aicomylleville" target="_blank">Github</a></p>
             </div>
         </div>
     </div>
 
     <div class="part">
         <h4 class="h3">skills</h5>
-        
+
         <h5 class="h4">coding</h5>
         <p>Laravel</p>
         <p>Java</p>
         <p>JavaScript</p>
-        <p>Svelte</p>
+        <p>VueJS</p>
         <p>GO</p>
         <p>HTML, (S)CSS</p>
         <p>(No)SQL</p>
@@ -59,13 +59,18 @@
     <div class="part">
         <h4 class="h3">experience</h4>
 
+        <h5 class="h4">student job</h5>
+        <p class="small">march 2023 - present</p>
+        <p class="bold">o2o, Ghent</p>
+        <p>Full-stack development and integration of a website in Laravel and VueJS. Also helped the design operations team with UX/UI tasks.</p>
+
         <h5 class="h4">internship</h5>
         <p class="small">september 2022 - december 2022</p>
         <p class="bold">Liantis, Brugge</p>
         <p>Full-stack development and integration of a website in Spring Boot Java and Angular</p>
 
-        <h5 class="h4">job student</h5>
-        <p class="class">september 2014 - present</p>
+        <h5 class="h4">student job</h5>
+        <p class="small">september 2014 - februari 2023</p>
         <p class="bold">Different companies, Ghent & Ypres</p>
         <p>From delivery driver to IT employee, gained as much experience as possible in the working world.</p>
     </div>
